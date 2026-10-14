@@ -1,0 +1,31 @@
+
+{
+  "manifest_version": 3,
+  "name": "GuardianAI",
+  "version": "0.3.0",
+  "description": "A privacy-conscious digital safety companion for children.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "notifications",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "GuardianAI Safety Shield",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

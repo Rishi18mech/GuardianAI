@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GuardianAI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      
+<div class="guardian-sentinel" aria-label="GuardianAI sentinel">
+  <div class="sentinel-aura"></div>
+  <div class="sentinel-shield">
+    <div class="sentinel-head">
+      <div class="sentinel-visor">
+        <span class="sentinel-eye"></span>
+        <span class="sentinel-eye"></span>
+        <span class="sentinel-scan"></span>
+      </div>
+    </div>
+    <div class="sentinel-body">
+      <div class="sentinel-emblem"></div>
+    </div>
+  </div>
+</div>
+
+      <div class="brand">
+        <h1>GuardianAI</h1>
+        <p class="subtitle">Your online safety companion</p>
+      </div>
+      <span class="live-dot" title="Companion ready"></span>
+    </header>
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR SAFE SPACE</p>
+      <h2>What's on your mind?</h2>
+      <p>You can talk about anything online that feels confusing, uncomfortable, or unsafe.</p>
+    </section>
+
+    <section class="chat-card" aria-label="Safety chat">
+      <div id="chatMessages" class="chat-messages" aria-live="polite">
+        <div class="message assistant">
+          <span class="message-label">GuardianAI</span>
+          <p>Hey! I'm here to help. Tell me what's happening, and we'll think through it together.</p>
+        </div>
+      </div>
+
+      <form id="chatForm" class="chat-form">
+        <label class="sr-only" for="chatInput">Your message</label>
+        <textarea id="chatInput" rows="2" maxlength="2000"
+          placeholder="Type your concern here..." required></textarea>
+        <button id="sendButton" class="send-button" type="submit"
+          aria-label="Send message">➤</button>
+      </form>
+      
+    </section>
+
+    <section class="tools">
+      <button id="regionCaptureButton" class="secondary-button" type="button">
+        <span aria-hidden="true">🔎</span>
+        <span><strong>Capture an area</strong><small>Select a message or post</small></span>
+      </button>
+
+      <button id="snapshotButton" class="secondary-button" type="button">
+        <span aria-hidden="true">📸</span>
+        <span><strong>Take Snapshot</strong><small>Capture the current tab</small></span>
+      </button>
+
+      <label class="secondary-button upload-button">
+        <span aria-hidden="true">🖼️</span>
+        <span><strong>Upload Image</strong><small>Choose a screenshot</small></span>
+        <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp">
+      </label>
+    </section>
+
+    <section id="snapshotPanel" class="snapshot-panel" hidden>
+      <div class="section-heading">
+        <strong>Review your image</strong>
+        <button id="cancelSnapshot" class="text-button" type="button">Cancel</button>
+      </div>
+      <p class="microcopy">Check the image for private information before sending it.</p>
+      <p id="captureSource" class="microcopy" hidden></p>
+      <img id="snapshotPreview" alt="Screenshot preview">
+      <button id="sendSnapshot" class="primary-button" type="button">
+        Analyze image
+      </button>
+      <p id="snapshotStatus" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="scan-section">
+      <button id="scanButton" class="scan-button" type="button">
+        Check this page
+      </button>
+      <p id="status" class="status" role="status" aria-live="polite">
+        Ready to help whenever you need.
+      </p>
+
+      <section id="result" class="result-card" hidden>
+        <div class="risk-row">
+          <span>Page assessment</span>
+          <strong id="riskLevel">—</strong>
+        </div>
+        <p class="field-label">Category</p>
+        <p id="category" class="result-text"></p>
+        <p class="field-label">Why this was flagged</p>
+        <p id="explanation" class="result-text"></p>
+        <p class="field-label">Recommended action</p>
+        <p id="action" class="result-text"></p>
+      </section>
+    </section>
+
+    <footer class="disclaimer">
+      AI can make mistakes. If you feel unsafe, stop replying and speak with a trusted adult.
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
