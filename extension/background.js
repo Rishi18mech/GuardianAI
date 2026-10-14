@@ -1,5 +1,5 @@
 
-const BACKEND_URL = "http://127.0.0.1:8000/analyze";
+const BACKEND_URL = "https://guardianai-api-7h84.onrender.com/analyze";
 const MAX_TEXT_LENGTH = 6000;
 const MIN_SCAN_INTERVAL_MS = 5000;
 

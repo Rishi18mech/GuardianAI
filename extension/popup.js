@@ -1,5 +1,5 @@
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = "https://guardianai-api-7h84.onrender.com";
 const MAX_HISTORY = 12;
 
 const scanButton = document.getElementById("scanButton");

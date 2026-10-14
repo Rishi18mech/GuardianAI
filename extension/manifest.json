@@ -12,7 +12,7 @@
     "contextMenus"
   ],
   "host_permissions": [
-    "http://127.0.0.1:8000/*"
+    "https://guardianai-api-7h84.onrender.com/*"
   ],
   "background": {
     "service_worker": "background.js"
